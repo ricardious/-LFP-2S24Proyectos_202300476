@@ -72,7 +72,7 @@ contains
         call this%printTokens()
         call this%printErrors()
 
-        call this%create_report("report.html")
+        call this%create_report()
     end subroutine analyze
 
     ! Add a token to the list of tokens
@@ -301,14 +301,23 @@ contains
     end subroutine removeCommas
     
     ! Create an HTML report of the analysis
-    subroutine create_report(this, file)
+    subroutine create_report(this)
         class(Analyzer), intent(in) :: this
-        character(len=*), intent(in) :: file
+        character(len=100) :: file
         integer :: i, iosx
-        integer :: unit = 12 ! Unit number for the file
+        integer :: unit = 12 ! Unit numbtimestamper for the file
+        character(8)  :: date
+        character(6) :: time
+ 
+        integer,dimension(8) :: values
+
+        call date_and_time(DATE=date, TIME=time)
+
+        file = "./data/output/report_"//trim(adjustl(date))//"_"//trim(adjustl(time))//".html"
+
 
         ! Open the file for writing
-        open(unit=unit, file=file, iostat=iosx, status="replace", action="write")
+        open(unit=unit, file=file, iostat=iosx, status="new", action="write")
         if ( iosx /= 0 ) stop "Error saving report"
 
         ! Write the HTML header
