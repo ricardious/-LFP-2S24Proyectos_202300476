@@ -306,15 +306,15 @@ contains
         character(len=100) :: file
         integer :: i, iosx
         integer :: unit = 12 ! Unit numbtimestamper for the file
-        character(8)  :: date
-        character(6) :: time
- 
-        integer,dimension(8) :: values
+        character(8)  :: date ! Variable to store the current date (8 characters, e.g., 'YYYYMMDD') 
+        character(6) :: time ! Variable to store the current time (6 characters, e.g., 'HHMMSS')
 
+        ! Call the intrinsic subroutine to get the current date and time
         call date_and_time(DATE=date, TIME=time)
 
+        ! Construct the output file path using the date and time
         file = "./data/output/report_"//trim(adjustl(date))//"_"//trim(adjustl(time))//".html"
-
+        ! The file name will look something like 'report_YYYYMMDD_HHMMSS.html'
 
         ! Open the file for writing
         open(unit=unit, file=file, iostat=iosx, status="new", action="write")
