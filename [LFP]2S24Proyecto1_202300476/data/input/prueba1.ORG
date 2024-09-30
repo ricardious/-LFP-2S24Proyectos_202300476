@@ -1,0 +1,78 @@
+Grafica:{
+	Nombre:"Modelo Continental Beta";
+	Continente:{
+	Nombre: "Asia";
+		Pais:{
+			Nombre:"Japon";
+			Poblacion: 2352342;
+			Saturacion:60%;
+			Bandera: ".\ImagenesBanderas\bandera_Japon.jpg";
+		}
+		Pais:{
+			Bandera: ".\ImagenesBanderas\bandera_China.png";
+			Nombre:"China";
+			Poblacion:1350000000 ;
+			Saturacion:84%;
+		}
+		Pais:{
+			Saturacion:69%;
+			Poblacion: 2352342;
+			Nombre:"Korea";
+			Bandera: ".\ImagenesBanderas\bandera_Korea.jpg";
+		}
+	}
+	Continente:{
+	Nombre: "America";
+		Pais:{
+			Nombre:"Canada";
+			Poblacion: 23423423;
+			Saturacion:44%;
+			Bandera: ".\ImagenesBanderas\bandera_Canada.png";
+		}
+	}
+	Continente:{
+	Nombre: "Europa";
+		Pais:{
+			Nombre:"Alemania";
+			Poblacion: 2352342;
+			Saturacion:74%;
+			Bandera: ".\ImagenesBanderas\bandera_Alemania.jpg";
+		}
+		Pais:{
+			Bandera: ".\ImagenesBanderas\bandera_Espana.png";
+			Nombre:"Espana";
+			Poblacion:1350000000 ;
+			Saturacion:45%;
+		}
+		Pais:{
+			Saturacion:100%;
+			Poblacion: 2352342;
+			Nombre:"Inglaterra";
+			Bandera: ".\ImagenesBanderas\bandera_Inglaterra.png";
+		}
+	}
+  Continente:{
+  Nombre: "Oceania";
+     Pais:{
+          Nombre:"Islas Marshall";
+          Poblacion: 2352342;
+          Saturacion:8%;
+          Bandera: ".\ImagenesBanderas\bandera_IslasMarshall.png";
+     }
+     Pais:{
+          Nombre:"Islas Salomon";
+          Poblacion: 45000;
+          Saturacion:60%;
+          Bandera: ".\ImagenesBanderas\bandera_IslasSalmon.png";
+     }
+  }
+  Continente:{
+  Nombre: "Africa";
+     Pais:{
+          Nombre:"Cabo Verde";
+          Poblacion: 35000;
+          Saturacion:43%;
+          Bandera: ".\ImagenesBanderas\bandera_CaboVerde.png";
+     }
+  }
+}

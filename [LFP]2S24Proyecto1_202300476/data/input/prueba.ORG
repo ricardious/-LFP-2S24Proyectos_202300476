@@ -1,0 +1,45 @@
+Grafica:{
+	Nombre:"Modelo Continental";
+	Continente:{
+	Nombre: "Asia";
+		Pais:{
+			Nombre:"Japon";
+			Poblacion: 2352342;
+			Saturacion:44%;
+			Bandera: ".\ImagenesBanderas\bandera_Japon.jpg";
+		}
+		Pais:{
+			Bandera: ".\ImagenesBanderas\bandera_China.png";
+			Nombre:"China";
+			Poblacion:1350000000 ;
+			Saturacion:13%;
+		}
+		Pais:{
+			Saturacion:21%;
+			Poblacion: 2352342;
+			Nombre:"Korea";
+			Bandera: ".\ImagenesBanderas\bandera_Korea.jpg";
+		}
+	}
+	Continente:{
+	Nombre: "America";
+		Pais:{
+			Nombre:"Canada";
+			Poblacion: 23423423;
+			Saturacion:74%;
+			Bandera: ".\ImagenesBanderas\bandera_Canada.png";
+		}
+		Pais:{
+			Poblacion: 17263239;
+			Nombre:"Guatemala";
+			Saturacion:87%;
+			Bandera: ".\ImagenesBanderas\bandera_Guatemala.jpg";
+		}
+		Pais:{
+			Saturacion:13%;
+			Nombre:"Chile";
+			Poblacion: 235234234;
+			Bandera: ".\ImagenesBanderas\bandera_Chile.jpg";
+		}
+	}
+}
