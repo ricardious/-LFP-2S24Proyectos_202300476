@@ -1,0 +1,63 @@
+# Author: Ricardious
+# .gitignore file for a project using Python and Fortran
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cython debug symbols
+cython_debug/
+
+# Fortran compiled object files
+*.o
+*.mod
+*.a
+*.so
+
+# Python virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Fortran binary files
+a.out
+*.exe
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# MacOS files
+.DS_Store
+
+# Backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Logs
+*.log
+
+# Test results
+coverage/
+*.cover
+*.coverage
+*.coverage.*
+
+# Documentation
+/docs/build/
+
+# Ignore specific editor files
+.vscode/
+.idea/
+
+# Generated files from CMake (if using for Fortran)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
