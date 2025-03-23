@@ -11,13 +11,13 @@ Grafica:{
 		Pais:{
 		Nombre:"Mexico";
 			Poblacion: 119713;
-			Saturacion:35%;
+			Saturacion:5%;
 			Bandera: ".\imagen\Mexico.png";
 		}
 		Pais:{
 		Nombre:"Estados unidos";
 			Poblacion: 512300;
-			Saturacion:73%;
+			Saturacion:5%;
 			Bandera: ".\imagen\EEUU.png";
 		}
 	}
