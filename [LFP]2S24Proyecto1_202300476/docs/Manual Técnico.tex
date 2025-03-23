@@ -1,0 +1,198 @@
+\documentclass[12pt, letterpaper, twosite]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\emph{\uppercase{\leftmark}}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{1.0pt}
+\pagestyle{fancy}
+\date{}
+\title{Manual Técnico}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Manual Técnico},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+% Portada
+\begin{titlepage}
+      \centering
+      % {\includegraphics[width=0.2\textwidth]{./images/logo.png}\par} % Comentada la imagen del logo
+      \vspace{1cm}
+      {\bfseries\LARGE Universidad de San Carlos de Guatemala \par}
+      \vspace{1cm}
+      {\scshape\Large Facultad de Ingeniería \par}
+      \vspace{3cm}
+      {\scshape\Huge Manual Técnico: Visualización de Archivos .ORG con Fortran y Tkinter \par}
+      \vspace{3cm}
+      {\itshape\Large Lenguajes Formales y de Programación \par}
+      \vfill
+      {\Large Autor: \par}
+      {\Large Alex Ricardo Castañeda Rodríguez \par}
+      \vfill
+      {\Large Octubre 2024 \par}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+Este manual técnico proporciona una guía detallada sobre el diseño y la implementación del sistema encargado de visualizar archivos con extensión .ORG, utilizando el lenguaje de programación Fortran y una interfaz gráfica creada en Python con la biblioteca Tkinter. 
+
+El sistema permite cargar, analizar y graficar la información de estos archivos, que contienen datos sobre ubicaciones geográficas y saturación de mercados.
+
+\subsection{Propósito del documento}
+El objetivo de este manual es explicar la arquitectura del sistema, su estructura de código, y las tecnologías utilizadas, además de ofrecer soporte técnico para desarrolladores y usuarios avanzados que deseen mantener y expandir el sistema.
+
+\subsection{Alcance}
+El sistema cubre el análisis léxico de archivos .ORG y la generación de gráficos a partir de los datos de estos archivos. Las secciones del sistema incluyen la carga de archivos, análisis léxico, manejo de errores y visualización gráfica.
+
+\subsection{Descripción del software}
+El software está dividido en dos partes principales:
+\begin{itemize}
+    \item \textbf{Análisis léxico en Fortran}: Se encarga de procesar los archivos .ORG para identificar los tokens y detectar errores léxicos.
+    \item \textbf{Interfaz gráfica en Tkinter}: Permite la interacción con el usuario, mostrando el editor de texto, los gráficos generados, y el manejo de archivos.
+\end{itemize}
+
+\subsection{Tecnologías utilizadas}
+\begin{itemize}
+    \item \textbf{Lenguaje de Programación}: Fortran y Python (con Tkinter)
+    \item \textbf{Bibliotecas}: Graphviz para la generación de gráficos
+    \item \textbf{Entorno de desarrollo}: Visual Studio Code
+    \item \textbf{Control de versiones}: Git
+\end{itemize}
+
+\section{Requisitos Previos}
+\subsection{Hardware}
+\begin{itemize}
+    \item \textbf{Especificaciones Mínimas}:
+    \begin{itemize}
+        \item Procesador: 2 núcleos
+        \item RAM: 4 GB
+        \item Espacio en Disco: 200 MB
+    \end{itemize}
+\end{itemize}
+
+\subsection{Software}
+\begin{itemize}
+    \item \textbf{Sistemas Operativos}: 
+    \begin{itemize}
+        \item Linux, Windows, MacOS
+    \end{itemize}
+    \item \textbf{Librerías y Herramientas}:
+    \begin{itemize}
+        \item Compilador Fortran (\texttt{gfortran})
+        \item Python 3.x con Tkinter
+        \item Graphviz
+    \end{itemize}
+\end{itemize}
+
+\section{Configuración del entorno de desarrollo}
+\begin{enumerate}
+    \item \textbf{Instalar Fortran y Python}: Asegúrate de tener instalados \texttt{gfortran} y Python 3.x.
+    \item \textbf{Instalar Tkinter y Graphviz}:
+    \begin{verbatim}
+    sudo apt install python3-tk graphviz
+    \end{verbatim}
+    \item \textbf{Configurar Visual Studio Code}: Instalar las extensiones para Fortran y Python.
+\end{enumerate}
+
+\section{Arquitectura del Sistema}
+El sistema está dividido en dos partes principales: el análisis léxico en Fortran y la interfaz gráfica en Tkinter.
+
+\subsection{Componentes principales}
+\begin{itemize}
+    \item \textbf{Análisis Léxico en Fortran}: Lee el archivo .ORG, genera tokens y detecta errores.
+    \item \textbf{Interfaz en Tkinter}: Permite la carga del archivo, el análisis del contenido y la visualización del gráfico generado por Graphviz.
+\end{itemize}
+
+\subsection{Especificación del Proyecto}
+El sistema debe cumplir con las siguientes funcionalidades:
+\begin{itemize}
+    \item Cargar archivos .ORG desde la interfaz gráfica
+    \item Realizar análisis léxico de los archivos
+    \item Generar gráficos de la estructura de continentes y países con sus niveles de saturación
+    \item Mostrar errores léxicos en un reporte HTML si los hubiera
+\end{itemize}
+
+\section{Componentes del Sistema}
+\subsection{Análisis Léxico en Fortran}
+El código en Fortran se encarga de procesar los archivos .ORG y generar los tokens que representan las diferentes estructuras del archivo, como continentes, países y sus datos asociados.
+
+\begin{itemize}
+    \item \textbf{Lexer}: El lexer analiza línea por línea y genera tokens, incluyendo palabras reservadas, números, cadenas, etc.
+    \item \textbf{Gestión de Errores}: Si el archivo contiene errores léxicos, se generará un archivo HTML con la lista de errores.
+\end{itemize}
+
+\subsection{Interfaz Gráfica en Tkinter}
+La interfaz gráfica permite al usuario cargar archivos, visualizarlos, analizarlos y generar gráficos con los resultados. 
+\begin{itemize}
+    \item \textbf{Editor de Texto}: Donde se puede cargar y editar el contenido de los archivos .ORG.
+    \item \textbf{Menú de Opciones}: Permite abrir, guardar, analizar y generar reportes.
+    \item \textbf{Visualización Gráfica}: Muestra los gráficos generados por Graphviz, que reflejan la estructura de los continentes y países descritos en el archivo.
+\end{itemize}
+
+\section{Estructura del Código}
+El código está organizado de la siguiente manera:
+\begin{itemize}
+    \item \textbf{Fortran Lexer}: Se encuentra en el archivo \texttt{lexer.f95}.
+    \item \textbf{Tkinter GUI}: Se encuentra en el archivo \texttt{main.py}.
+\end{itemize}
+
+\subsection{Archivo Lexer en Fortran}
+El código de Fortran se divide en subrutinas que procesan el archivo y generan tokens. Un fragmento de la subrutina que procesa los continentes es el siguiente:
+\begin{verbatim}
+subroutine process_continent(line)
+    character(len=*), intent(in) :: line
+    ! Código para procesar el continente
+end subroutine process_continent
+\end{verbatim}
+
+\subsection{Interfaz en Python}
+La interfaz gráfica en Tkinter está contenida en el archivo \texttt{main.py}. El siguiente fragmento muestra cómo se carga un archivo .ORG:
+\begin{verbatim}
+def open_file():
+    filename = filedialog.askopenfilename(defaultextension=".org",
+                                          filetypes=[("ORG files", "*.org")])
+    if filename:
+        with open(filename, 'r') as file:
+            editor.insert(END, file.read())
+\end{verbatim}
+
+\section{Mantenimiento del Sistema}
+\subsection{Mantenimiento Preventivo}
+\begin{itemize}
+    \item Verificar que las versiones de Python, Fortran y Graphviz estén actualizadas.
+    \item Realizar pruebas periódicas para asegurar la correcta funcionalidad del sistema.
+\end{itemize}
+
+\subsection{Solución de Problemas}
+\begin{itemize}
+    \item \textbf{Errores al cargar archivos}: Asegurarse de que los archivos .ORG tengan el formato correcto.
+    \item \textbf{Errores léxicos}: Revisar el archivo HTML generado que contiene el reporte de errores.
+\end{itemize}
+
+\section{Conclusión}
+Este manual técnico proporciona una guía para entender la estructura y el funcionamiento del sistema. Se espera que facilite el mantenimiento y desarrollo adicional del software.
+
+\end{document}

@@ -1,0 +1,140 @@
+\documentclass[12pt, letterpaper, twosite]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage[left=2.00cm, right=2.50cm, top=2.50cm, bottom=2.00cm]{geometry}
+\usepackage{fancyhdr}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\emph{\uppercase{\leftmark}}}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{1.0pt}
+\pagestyle{fancy}
+\date{}
+\title{Manual de Usuario}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={Manual de Usuario},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+% Portada
+\begin{titlepage}
+      \centering
+      %{\includegraphics[width=0.2\textwidth]{./images/logo.png}\par} % Comentada la imagen del logo
+      \vspace{1cm}
+      {\bfseries\LARGE Universidad de San Carlos de Guatemala \par}
+      \vspace{1cm}
+      {\scshape\Large Facultad de Ingeniería \par}
+      \vspace{3cm}
+      {\scshape\Huge Manual de Usuario: Visualización de Archivos .ORG con Fortran y Tkinter \par}
+      \vspace{3cm}
+      {\itshape\Large Lenguajes Formales y de Programación \par}
+      \vfill
+      {\Large Autor: \par}
+      {\Large Alex Ricardo Castañeda Rodríguez \par}
+      \vfill
+      {\Large Octubre 2024 \par}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+\label{sec:1}
+
+Este manual proporciona una guía detallada para el uso del sistema encargado de analizar y graficar archivos con extensión .ORG utilizando Fortran y una interfaz gráfica desarrollada en Python con la biblioteca Tkinter.
+
+El sistema permite cargar y analizar el contenido de los archivos .ORG, los cuales contienen información geográfica y del mercado de distintos países y continentes. El análisis léxico de los archivos está desarrollado en Fortran, y los resultados se visualizan gráficamente en la interfaz creada en Python.
+
+\section{Objetivos}
+\subsection{Objetivo General}
+Proporcionar una guía completa y detallada para que los usuarios puedan utilizar el sistema de visualización de archivos .ORG con facilidad y precisión.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+    \item Explicar paso a paso cómo cargar y analizar los archivos .ORG.
+    \item Describir las funcionalidades de la interfaz gráfica y cómo operar el sistema para obtener resultados gráficos.
+    \item Detallar el manejo de errores y cómo generar reportes de análisis léxico.
+\end{itemize}
+
+\section{Requisitos del Sistema}
+Para ejecutar el sistema, el usuario necesita:
+\begin{itemize}
+    \item Sistema operativo compatible con Fortran y Python.
+    \item Compilador de Fortran.
+    \item Bibliotecas necesarias: Tkinter para Python y Graphviz para la generación de gráficos.
+\end{itemize}
+
+\section{Instalación y Configuración}
+El software requiere la instalación tanto de Fortran como de Python para su correcto funcionamiento.
+
+\subsection{Instalación de Fortran y Python}
+Siga los pasos para instalar el compilador Fortran (`gfortran`) y Python con Tkinter:
+\begin{enumerate}
+    \item \textbf{Instalar Fortran}: Se recomienda instalar `gfortran` desde los repositorios de su sistema operativo.
+    \item \textbf{Instalar Python y Tkinter}: Python viene con Tkinter preinstalado en muchas distribuciones. Asegúrese de tenerlo habilitado.
+    \item \textbf{Instalar Graphviz}: Graphviz es utilizado para generar los gráficos del análisis. Puede instalarlo desde su gestor de paquetes o desde la página oficial.
+\end{enumerate}
+
+\subsection{Compilación del Código Fortran}
+Para compilar el código Fortran, utilice el siguiente comando:
+
+\begin{verbatim}
+gfortran lexicanalyzer.f95 -o lexicanalyzer
+\end{verbatim}
+
+Esto generará el ejecutable que realizará el análisis léxico del archivo .ORG.
+
+\section{Uso del Software}
+El software se opera principalmente desde la interfaz gráfica desarrollada en Python.
+
+\subsection{Interfaz Gráfica}
+Al iniciar el programa, la interfaz gráfica presenta un menú con las siguientes opciones:
+\begin{itemize}
+    \item \textbf{Abrir Archivo .ORG}: Permite cargar un archivo .ORG desde el sistema de archivos.
+    \item \textbf{Guardar}: Guarda el contenido actual del editor de texto en un archivo .ORG.
+    \item \textbf{Guardar Como}: Permite guardar el archivo con un nombre diferente.
+    \item \textbf{Analizar}: Realiza el análisis léxico del archivo cargado y genera un reporte.
+    \item \textbf{Acerca de}: Muestra información del estudiante y del curso.
+    \item \textbf{Salir}: Cierra la aplicación.
+\end{itemize}
+
+\subsection{Cargar un Archivo .ORG}
+Para cargar un archivo, haga clic en \textit{Abrir Archivo .ORG} y seleccione el archivo que desea analizar. El contenido del archivo se mostrará en el editor de texto integrado en la interfaz.
+
+\subsection{Analizar el Archivo}
+Una vez cargado el archivo, seleccione la opción \textit{Analizar}. El sistema iniciará el análisis léxico y mostrará un reporte en HTML con los resultados. Si el archivo contiene errores léxicos, se mostrará un reporte de errores indicando la fila y columna del problema.
+
+\subsection{Generación de Gráficos}
+El sistema utiliza Graphviz para generar un gráfico de los países y continentes presentes en el archivo. El gráfico se mostrará en la sección gráfica de la interfaz después de un análisis exitoso.
+
+\section{Solución de Problemas}
+En esta sección se ofrecen soluciones a problemas comunes:
+\begin{itemize}
+    \item \textbf{Error al abrir el archivo}: Verifique que el archivo tenga la extensión .ORG y esté correctamente formateado.
+    \item \textbf{Errores léxicos}: Si el archivo tiene errores léxicos, se generará un reporte detallado. Corrija los errores en el archivo y vuelva a analizarlo.
+\end{itemize}
+
+\section{Consideraciones Finales}
+\begin{itemize}
+    \item El porcentaje de saturación solo acepta números enteros entre 0 y 100.
+    \item La interfaz gráfica requiere la instalación de Graphviz y Tkinter para su correcto funcionamiento.
+\end{itemize}
+
+\end{document}
